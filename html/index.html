@@ -8,3 +8,129 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
+
+    
+    <header class="header" id="home">
+        <p class="header__label">PHOTOGRAPHY PORTFOLIO</p>
+        <h1 class="header__title">Responsive Gallery</h1>
+        <a class="header__link" href="#gallery">Explore</a>
+    </header>
+
+
+    <main class="main">
+        <section class="gallery-section" id="gallery">
+
+            <h2 class="gallery-section__title">My Gallery</h2>
+
+            <p class="gallery-section__description">
+                Click on an image to see it in full size.
+            </p>
+
+            <div class="gallery">
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="13.jpg" alt="1"> 
+                </div>
+
+                <div class="gallery__item">
+                    <img
+                        class="gallery__image" src="2.jpg" alt="2" > 
+                    </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="3.jpg" alt="3">
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image"  src="4.jpg" alt="4" >
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="5.jpg" alt="5">
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="6.jpg" alt="6">
+                    
+                </div>
+
+                <div class="gallery__item"> 
+                    <img class="gallery__image"  src="7.jpg" alt="7">
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="8.jpg" alt="8" >
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image"  src="9.jpg" alt="9" >
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="10.JPEG" alt="10" >
+                    
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image"  src="11.jpg" alt="11" >
+                   
+                </div>
+
+                <div class="gallery__item">
+                    <img class="gallery__image" src="12.jpg" alt="12" >
+                   
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+    
+    <footer class="footer">
+        
+        <p class="footer__description">My photography collection</p>
+        <a class="footer__link" href="#home">Back to Top</a>
+    </footer>
+
+
+    <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <button class="close" id="closeLightbox" type="button">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+
+    <!-- JavaScript -->
+   <script>
+    const images = document.querySelectorAll('.gallery__image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-img');
+    const closeButton = document.getElementById('closeLightbox');
+
+    
+    images.forEach(function(image) {
+        image.addEventListener('click', function() {
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.classList.remove('hidden');
+        });
+    });
+
+    
+    closeButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        lightbox.classList.add('hidden');
+    });
+
+</script>
+
+</body>
+</html>
